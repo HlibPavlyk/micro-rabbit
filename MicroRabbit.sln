@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0A656374-8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Api", "src\MicroRabbit.Banking.Api\MicroRabbit.Banking.Api.csproj", "{F7180F72-D830-4B83-8908-B70CD241C6A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Aplication", "src\MicroRabbit.Banking.Aplication\MicroRabbit.Banking.Aplication.csproj", "{C3B3278A-2E33-48D2-8AF9-D0F0F2A61BF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Application", "src\MicroRabbit.Banking.Application\MicroRabbit.Banking.Application.csproj", "{C3B3278A-2E33-48D2-8AF9-D0F0F2A61BF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Data", "src\MicroRabbit.Banking.Data\MicroRabbit.Banking.Data.csproj", "{3A6FA96D-8E37-4D36-86E9-ADC676CEFAE0}"
 EndProject
