@@ -12,6 +12,8 @@ using MicroRabbit.Transfer.Application.Interfaces;
 using MicroRabbit.Transfer.Application.Services;
 using MicroRabbit.Transfer.Data.Context;
 using MicroRabbit.Transfer.Data.Repositories;
+using MicroRabbit.Transfer.Domain.EventHandlers;
+using MicroRabbit.Transfer.Domain.Events;
 using MicroRabbit.Transfer.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +24,8 @@ public static class DependencyContainer
     public static void RegisterServices(this IServiceCollection services)
     {
         services.AddTransient<IEventBus, RabbitMqBus>();
+        
+        services.AddTransient<IEventHandler<TransferCreatedEvent>, TransferCreatedEventHandler>();
 
         services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, CreateTransferCommandHandler>();
         
