@@ -30,7 +30,7 @@ public static class DependencyContainer
         
         services.AddTransient<IAccountRepository, AccountRepository>();
         services.AddTransient<ITransferRepository, TransferRepository>();
-        services.AddTransient<BankingDbContext>();
-        services.AddTransient<TransferDbContext>();
+        services.AddDbContext<BankingDbContext>();
+        services.AddDbContext<TransferDbContext>();
     }
 }
