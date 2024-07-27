@@ -7,7 +7,7 @@ namespace MicroRabbit.Mvc.Services;
 public class TransferService : ITransferService
 {
     private readonly HttpClient _client;
-    private readonly string uri = "https://localhost:7087/api/Banking";
+    private  string uri = "https://localhost:7087/api/Banking";
 
     public TransferService(HttpClient client)
     {
