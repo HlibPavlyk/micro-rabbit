@@ -17,4 +17,10 @@ public class TransferRepository : ITransferRepository
     {
         return _context.TransferLogs;
     }
+
+    public void Add(TransferLog transferLog)
+    {
+        _context.TransferLogs.Add(transferLog);
+        _context.SaveChanges();        
+    }
 }

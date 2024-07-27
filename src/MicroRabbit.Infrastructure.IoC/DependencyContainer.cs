@@ -23,7 +23,13 @@ public static class DependencyContainer
 {
     public static void RegisterServices(this IServiceCollection services)
     {
-        services.AddTransient<IEventBus, RabbitMqBus>();
+        services.AddSingleton<IEventBus, RabbitMqBus>(sp =>
+        {
+            var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+            return new RabbitMqBus(sp.GetService<IMediator>(), scopeFactory);
+        });
+
+        services.AddTransient<TransferCreatedEventHandler>();
         
         services.AddTransient<IEventHandler<TransferCreatedEvent>, TransferCreatedEventHandler>();
 
