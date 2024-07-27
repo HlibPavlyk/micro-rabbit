@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BankingDbContext>(options =>
 });
 
 builder.Services.AddMediatR(typeof(Program).Assembly);
-DependencyContainer.RegisterServices(builder.Services);
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 

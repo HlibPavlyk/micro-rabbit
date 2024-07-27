@@ -24,6 +24,7 @@ public class BankingController :ControllerBase
     [HttpPost]
     public IActionResult Post([FromBody] AccountTransfer accountTransfer)
     {
+        _accountService.Transfer(accountTransfer);
         return Ok(accountTransfer);
     }
 }
