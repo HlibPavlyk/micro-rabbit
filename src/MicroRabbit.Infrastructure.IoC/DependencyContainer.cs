@@ -8,6 +8,11 @@ using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Infrastructure.Bus;
+using MicroRabbit.Transfer.Application.Interfaces;
+using MicroRabbit.Transfer.Application.Services;
+using MicroRabbit.Transfer.Data.Context;
+using MicroRabbit.Transfer.Data.Repositories;
+using MicroRabbit.Transfer.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroRabbit.Infrastructure.IoC;
@@ -21,8 +26,11 @@ public static class DependencyContainer
         services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, CreateTransferCommandHandler>();
         
         services.AddTransient<IAccountService, AccountService>();
+        services.AddTransient<ITransferService, TransferService>();
         
         services.AddTransient<IAccountRepository, AccountRepository>();
+        services.AddTransient<ITransferRepository, TransferRepository>();
         services.AddTransient<BankingDbContext>();
+        services.AddTransient<TransferDbContext>();
     }
 }
