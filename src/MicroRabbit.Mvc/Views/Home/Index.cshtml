@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TransferViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,18 +9,21 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<form action="/home/transfer" method="post">
+<form asp-action="Transfer" method="post">
     <div class="form-group">
-        <label for="fromAccount">From Account</label>
-        <input type="text" class="form-control" id="fromAccount" name="fromAccount" placeholder="From Account" required>
+        <label asp-for="FromAccount"></label>
+        <input asp-for="FromAccount" class="form-control" />
+        <span asp-validation-for="FromAccount" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label for="toAccount">To Account</label>
-        <input type="text" class="form-control" id="toAccount" name="toAccount" placeholder="To Account" required>
+        <label asp-for="ToAccount"></label>
+        <input asp-for="ToAccount" class="form-control" />
+        <span asp-validation-for="ToAccount" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label for="amount">Amount</label>
-        <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount" required>
+        <label asp-for="TransferAmount"></label>
+        <input asp-for="TransferAmount" class="form-control" />
+        <span asp-validation-for="TransferAmount" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Transfer</button>
 </form>
